@@ -67,6 +67,7 @@ class VitalApp:
         df = self.processor.process_once(self.record_dir.get(), mode=self.mode.get())
         if df is None:
             messagebox.showwarning("No data", "No datos válidos.")
+            self.running = False
             return
         self._log_tail(df)
 
